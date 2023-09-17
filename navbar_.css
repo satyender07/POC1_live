@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.Nav-Container{
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  padding: 1px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.Nav-Container ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Nav-Container ul li {
+  list-style: none;
+  margin: 0 30px;
+}
+ .Nav-Container ul li a{
+  text-decoration: none;
+  font-size: xx-large;
+  font-family: system-ui;
+  /* color: rgb(75, 75, 78); */
+  color: white;
+}
+
+.Nav-Container ul li:hover{
+  transform: scale(1.1);
+  transition: all .2s ease;
+}
+
+.Nav-Container ul li a:hover{
+  color: rgb(179, 179, 185);
+}

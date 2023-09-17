@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+        font-family: 'Poppins';
+    }
+
+    #result {
+        margin: 0px auto;
+        padding: 10px;
+        width: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 5px;
+        background: rgb(227, 238, 242);
+    }
+
+    #result h1 {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #result span {
+        color: blueviolet;
+    }
+
+    #result p {
+        text-align: center;
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    #result button {
+        margin: 10px 43%;
+        padding: 5px;
+        background: transparent;
+        border: 0.1px solid rgb(199, 196, 196);
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    #result button:hover {
+        transform: scale(1.03);
+        background-color: rgb(217, 221, 222);
+        transition: all .2s ease;
+    }
+
+    #result a {
+        font-size: x-large;
+        text-decoration: none;
+    }
+
+    #result {
+        margin: 0 auto;
+    }
+
+    /* head code */
+
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px auto;
+        padding: 0px 20px;
+        width: 91vw;
+    }
+
+    .head h1 {
+        border: 2px solid;
+        text-align: center;
+        width: 80vw;
+        background: lightblue;
+        border: 0.1px solid rgb(199, 196, 196);
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .head button {
+        width: 160px;
+        background: green;
+        border: 0.1px solid rgb(199, 196, 196);
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .head button:hover {
+        transform: scale(1.03);
+        transition: .2s ease;
+        background: rgb(23, 185, 23);
+    }
+
+    .head button a {
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+        line-height: 48px;
+        padding: 15px;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <h1>WELCOME TO DASHBOARD</h1>
+        <button><a href="Gallery.html">GO TO GALLERY</a></button>
+    </div>
+
+    <div id="result">
+    </div>
+
+
+    <script>
+
+        document.getElementById('result').innerHTML = `<h1> Welcome <span>${localStorage.getItem('name')}</span> this is your dashboard </h1>
+         <p> Email: <span>${localStorage.getItem('email')}</span> &emsp;&emsp;&emsp; Phone: <span> ${localStorage.getItem('phone')}</span></p>  <button class="logout">
+            <a href="login.html">Logout</a>
+        </button>`;
+
+
+        document.querySelector('.logout').addEventListener('click', () => {
+            localStorage.removeItem('name');
+            localStorage.removeItem('email');
+            localStorage.removeItem('phone');
+        });
+
+
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+
+    </script>
+</body>
+
+</html>
